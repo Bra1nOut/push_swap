@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:31:58 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/21 15:21:21 by levincen         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:13:47 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include "libft/libft/libft.h"
+
+# define ERROR 100000000000000
 
 #endif
