@@ -1,0 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/26 17:28:24 by levincen          #+#    #+#             */
+/*   Updated: 2025/02/26 17:34:12 by levincen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/push_swap.h"
+
+void	ft_error(char *msg)
+{
+	ft_putendl_fd(msg, 1);
+	exit(0);
+}
+
+int	ft_strcmp_swap(char *s1, char *s2)
+{
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
+}
+
+int	ft_isnum(char *str)
+{
+	int	i;
+	int	sign_count;
+
+	i = 0;
+	sign_count = 0;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		sign_count++;
+		i++;
+	}
+	if (sign_count > 1)
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	ft_free(t_test *test,char **str)
+{
+	while (test->j_split >= 0)
+		free(str[test->j_split--]);
+}
