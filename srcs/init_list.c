@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   init_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 15:19:18 by levincen          #+#    #+#             */
-/*   Updated: 2024/11/11 14:14:07 by levincen         ###   ########.fr       */
+/*   Created: 2025/02/27 12:54:57 by levincen          #+#    #+#             */
+/*   Updated: 2025/02/27 17:21:22 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	init_list(int argc, char **argv ,t_list **stack)
 {
-	char	*new;
-	int		i;
-	int		j;
+	t_list *new;
+	int	i;
+	int	j;
+	int	index;
 
-	if (!s1 || !s2)
-		return (0);
-	new = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!new)
-		return (NULL);
-	i = 0;
+	i = 1;
 	j = 0;
-	while (s1[i])
+	index = 1;
+	*stack = NULL;
+	if (argc > 2)
 	{
-		new[i] = s1[i];
-		i++;
+		while (argv[i])
+		{
+			new = ft_lstnew((int)(long)ft_atoi_swap(argv[i]));
+			new->index = index;
+			ft_lstadd_back(stack, new);
+			printf("%d\n", new->content);
+			i++;
+			index++;
+		}
 	}
-	while (s2[j])
-	{
-		new[i] = s2[j];
-		i++;
-		j++;
-	}
-	new[i] = '\0';
-	return (new);
 }

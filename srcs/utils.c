@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:28:24 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/26 17:34:12 by levincen         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:19:13 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,22 @@ int	ft_isnum(char *str)
 	return (1);
 }
 
-void	ft_free(t_test *test,char **str)
+void	ft_free(t_check *argv_test, char **str)
 {
-	while (test->j_split >= 0)
-		free(str[test->j_split--]);
+	while (argv_test->j_split >= 0)
+		free(str[argv_test->j_split--]);
+}
+
+void	free_lst(t_list **stack)
+{
+	t_list *next;
+	if (!stack)
+		return;
+	while (*stack)
+	{
+		next = (*stack)->next;
+		free(*stack);
+		*stack = next;
+	}
+	free(stack);
 }

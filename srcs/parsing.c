@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:27:35 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/26 17:34:06 by levincen         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:08:51 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int	atoi_limits(long int result, int sign)
 {
 	if ((result * sign) > INT_MAX || (result * sign) < INT_MIN)
-	{
 		ft_error("INT RANGE ERROR");
-	}
 	return (1);
 }
 
@@ -67,27 +65,29 @@ int	ft_duplicate_number(char *num_str, char **argv, int i)
 	return (0);
 }
 
-void	argv_split(t_test *test, int argc, char **argv)
+void	argv_split(t_check *argv_test, int argc, char **argv)
 {
 	int		i;
 
-	test->tab = NULL;
+	argv_test->tab = NULL;
 	i = 0;
-	test->j_split = 1;
+	argv_test->j_split = 1;
 	if (argc == 2)
 	{
-		test->tab = ft_split(argv[1], ' ');
-		while (test->tab[test->j_split])
-			test->j_split++;
+		argv_test->tab = ft_split(argv[1], ' ');
+		while (argv_test->tab[argv_test->j_split])
+			argv_test->j_split++;
+		ft_free(argv_test, argv_test->tab);
+		free(argv_test->tab);
 	}
 	else
 	{
-		test->j_split = 2;
+		argv_test->j_split = 2;
 		i = 1;
-		test->tab = &argv[i];
+		argv_test->tab = &argv[i];
 	}
 }
-int	argv_check(t_test *test, int argc)
+int	argv_check(t_check *argv_test, int argc)
 {
 	int		i;
 	int		temp;
@@ -95,15 +95,15 @@ int	argv_check(t_test *test, int argc)
 	i = 0;
 	if (argc >= 2)
 	{
-		if (test->j_split > 1)
+		if (argv_test->j_split > 1)
 		{
 			i = 0;
-			while (test->tab[i])
+			while (argv_test->tab[i])
 			{
-				temp = ft_atoi_swap(test->tab[i]);
-				if (!ft_isnum(test->tab[i]))
+				temp = ft_atoi_swap(argv_test->tab[i]);
+				if (!ft_isnum(argv_test->tab[i]))
 					ft_error("NUM ERROR");
-				if (ft_duplicate_number(test->tab[i], test->tab, i))
+				if (ft_duplicate_number(argv_test->tab[i], argv_test->tab, i))
 					ft_error("DUPLICATE ERROR");
 				i++;
 			}
@@ -111,7 +111,5 @@ int	argv_check(t_test *test, int argc)
 	}
 	else
 		exit(0);
-	if (argc == 2)
-		ft_free(test, test->tab);
 	return (1);
 }

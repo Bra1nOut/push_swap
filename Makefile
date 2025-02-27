@@ -14,6 +14,7 @@ PURPLE = \033[0;35m
 PINK = \033[38;5;205m
 SRCS =	srcs/utils.c\
 		srcs/parsing.c\
+		srcs/init_list.c\
 		main.c
 
 SRCS_BONUS = \

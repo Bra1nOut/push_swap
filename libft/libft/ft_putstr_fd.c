@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 16:31:31 by levincen          #+#    #+#             */
-/*   Updated: 2024/11/06 17:35:09 by levincen         ###   ########.fr       */
+/*   Created: 2025/02/27 17:01:30 by levincen          #+#    #+#             */
+/*   Updated: 2025/02/27 17:01:44 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		ft_putchar_fd(s[i], fd);
+		write(fd, &s[i], 1);
 		i++;
 	}
 }
