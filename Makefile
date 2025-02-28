@@ -12,9 +12,10 @@ BLUE = \033[38;5;153m
 NC = \033[0m
 PURPLE = \033[0;35m
 PINK = \033[38;5;205m
-SRCS =	srcs/utils.c\
-		srcs/parsing.c\
-		srcs/init_list.c\
+SRCS =	srcs/parsing/utils.c\
+		srcs/parsing/parsing.c\
+		srcs/parsing/init_list.c\
+		srcs/instructions/swap.c\
 		main.c
 
 SRCS_BONUS = \

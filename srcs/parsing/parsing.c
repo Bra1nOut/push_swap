@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:27:35 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/27 17:08:51 by levincen         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:07:47 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	atoi_limits(long int result, int sign)
 {

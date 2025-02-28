@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:31:58 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/27 17:19:30 by levincen         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:57:12 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,11 @@ void		free_lst(t_list **stack);
 
 //Init List
 void		init_list(int argc, char **argv ,t_list **stack);
+
+//Instructions
+int			swap(t_list **stack);
+int			sa(t_list **stack_a, int true);
+int			sb(t_list **stack_b, int true);
+int			ss(t_list **stack_a, t_list **stack_b)
 
 #endif

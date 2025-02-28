@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:30:16 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/27 17:19:06 by levincen         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:54:24 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int	main(int argc, char **argv)
 		argv_split(argv_test, argc, argv);
 		argv_check(argv_test, argc);
 		init_list(argc, argv, stack_a);
+		// sa(stack_a, 1);
+		ss(stack_a);
+		// sb(stack_b, 1);
 		printf("CA PASSE\n");
 		free(argv_test);
 		free_lst(stack_a);
