@@ -16,6 +16,7 @@ SRCS =	srcs/parsing/utils.c\
 		srcs/parsing/parsing.c\
 		srcs/parsing/init_list.c\
 		srcs/instructions/swap.c\
+		srcs/instructions/push.c\
 		main.c
 
 SRCS_BONUS = \
