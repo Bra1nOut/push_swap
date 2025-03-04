@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:13:36 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/03 16:58:23 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/04 11:33:35 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int	pa(t_list **stack_a, t_list **stack_b)
 		current->index = i++;
 		current = current->next;
 	}
-	// printf("CONNARD\n");
 	current = *stack_b;
 	i = 1;
 	while (current)

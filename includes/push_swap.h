@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:31:58 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/03 16:07:31 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:52:56 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		ft_free(t_check *argv_test, char **str);
 void		free_lst(t_list **stack);
 
 //Init List
-void		init_list(int argc, char **argv ,t_list **stack);
+void		init_list(int argc, char **argv, t_list **stack);
 
 //Instructions
 int			swap(t_list **stack);
@@ -49,5 +49,19 @@ int			sb(t_list **stack_b, int true);
 int			ss(t_list **stack_a, t_list **stack_b);
 int			pa(t_list **stack_a, t_list **stack_b);
 int			pb(t_list **stack_a, t_list **stack_b);
+int			rotate(t_list **stack);
+int			ra(t_list **stack_a, int true);
+int			rb(t_list **stack_b, int true);
+int			rr(t_list **stack_a, t_list **stack_b);
+int			rev_rotate(t_list	**stack);
+int			rra(t_list **stack_a, int true);
+int			rra(t_list **stack_a, int true);
+int			rrb(t_list **stack_b, int true);
+
+//Sort
+t_list		*smallest_finder(t_list *stack);
+t_list		*biggest_finder(t_list *stack);
+int			sort_three(t_list **stack_a);
+int			sort_five(t_list **stack_a, t_list **stack_b);
 
 #endif
