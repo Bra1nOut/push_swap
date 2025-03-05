@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 09:34:03 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/27 17:04:37 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:07:09 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ typedef struct s_list
 {
 	int				content;
 	int				index;
+	int				push_cost;
+	bool			above_median;
+	struct s_list	*target_node;
 	struct s_list	*next;
+	struct s_list	*prev;
 }	t_list;
 
 

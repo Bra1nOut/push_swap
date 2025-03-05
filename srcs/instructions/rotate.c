@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:55:42 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/04 10:23:32 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:01:09 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,20 @@ int	rotate(t_list **stack)
 	return (0);
 }
 
-int	ra(t_list **stack_a, int true)
+int	ra(t_list **stack_a, int yes)
 {
 	if (rotate(stack_a) == -1)
 		return (-1);
-	if (true == 1)
+	if (yes == 1)
 		ft_printf("ra\n");
 	return (0);
 }
 
-int	rb(t_list **stack_b, int true)
+int	rb(t_list **stack_b, int yes)
 {
 	if (rotate(stack_b) == -1)
 		return (-1);
-	if (true == 1)
+	if (yes == 1)
 		ft_printf("rb\n");
 	return (0);
 }

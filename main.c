@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:30:16 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/04 15:44:01 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:01:57 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,15 @@ int	main(int argc, char **argv)
 		// ss(stack_a, stack_b);
 		// sb(stack_b, 1);
 		// ra(stack_a, 1);
-		if (argc == 4)
-			sort_three(stack_a);
-		else if (argc == 6)
-			sort_five(stack_a, stack_b);
-		print_stack(*stack_a);
-		// printf("CA PASSE\n");
+		if (!stack_sorted(stack_a))
+		{
+			if (argc == 4)
+				sort_three(stack_a);
+			else if (argc == 6)
+				sort_five(stack_a, stack_b);
+			print_stack(*stack_a);
+			// printf("CA PASSE\n");
+		}
 		free(argv_test);
 		free_lst(stack_a);
 		free_lst(stack_b);
