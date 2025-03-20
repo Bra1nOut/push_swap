@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:23:55 by levincen          #+#    #+#             */
-/*   Updated: 2024/12/17 10:51:04 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:17:44 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,3 @@ char	*get_next_line(int fd)
 	buffer = rm_start(buffer, line);
 	return (line);
 }
-
-// int	main()
-// {
-// 	int	fd = open("text.txt", O_RDONLY);
-// 	if (fd == -1)
-// 	{
-// 		perror("Erreur lors de l'ouverture du fichier");
-// 			return 1;
-// 	}
-// 	char	*line;
-// 	while (1)
-// 	{
-// 		line = get_next_line(fd);
-// 		if (!line)
-// 			break ;
-// 		printf("%s", line);
-// 		free(line);
-// 	}
-// 	close(fd);
-// 	// printf("%s\n", "connard");
-// }

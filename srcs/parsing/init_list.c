@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:54:57 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/03 16:50:09 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:17:15 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	init_non_splitted_list(char **argv, t_list **stack)
 			new = ft_lstnew((int)(long)ft_atoi_swap(argv[i]));
 			new->index = index;
 			ft_lstadd_back(stack, new);
-			printf("Init content stack_a : %d, Index : %i\n", new->content, new->index);
 			i++;
 			index++;
 		}
@@ -50,7 +49,6 @@ void	init_splitted_list(char **splitted_list, t_list **stack)
 			new = ft_lstnew((int)(long)ft_atoi_swap(splitted_list[i]));
 			new->index = index;
 			ft_lstadd_back(stack, new);
-			printf("Init content stack_a : %d, Index : %i\n", new->content, new->index);
 			i++;
 			index++;
 		}

@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 15:20:33 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/05 16:01:09 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:06:36 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ int	swap(t_list **stack)
 	return(0);
 }
 
-int	sa(t_list **stack_a, int yes)
+int	sa(t_list **stack_a, bool check)
 {
 	if (swap(stack_a) == -1)
 		return (-1);
-	if (yes == 1)
+	if (check == true)
 		ft_printf("sa\n");
 	return (0);
 }
 
-int	sb(t_list **stack_b, int yes)
+int	sb(t_list **stack_b, bool check)
 {
 	if (swap(stack_b) == -1)
 		return (-1);
-	if (yes == 1)
+	if (check == true)
 		ft_printf("sb\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:13:36 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/04 11:33:35 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:18:10 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	pb(t_list **stack_a, t_list **stack_b)
 		current->index = i++;
 		current = current->next;
 	}
-	printf("Content stack_b : %i, Index : %i\n", first->content, first->index);
 	ft_printf("pb\n");
 	return (0);
 }
@@ -69,7 +68,6 @@ int	pa(t_list **stack_a, t_list **stack_b)
 		current->index = i++;
 		current = current->next;
 	}
-	printf("Content stack_a : %i, Index : %i\n", first->content, first->index);
 	ft_printf("pa\n");
 	return (0);
 }

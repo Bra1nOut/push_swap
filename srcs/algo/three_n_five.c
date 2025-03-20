@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 11:36:47 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/04 15:44:28 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:42:07 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,20 @@ t_list	*biggest_finder(t_list *stack)
 	return (biggest);
 }
 
-int	sort_three(t_list **stack_a)
+void	sort_three(t_list **stack_a)
 {
 	t_list	*biggest;
 
 	biggest = biggest_finder(*stack_a);
 	if ((*stack_a) == biggest)
-		ra(stack_a, 1);
+		ra(stack_a, true);
 	else if (biggest == (*stack_a)->next)
-		rra(stack_a, 1);
+		rra(stack_a, true);
 	if ((*stack_a)->content > (*stack_a)->next->content)
-		sa(stack_a, 1);
-	return (0);
+		sa(stack_a, true);
 }
 
-int	sort_five(t_list **stack_a, t_list **stack_b)
+void	sort_five(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*smallest;
 
@@ -64,17 +63,16 @@ int	sort_five(t_list **stack_a, t_list **stack_b)
 		if (smallest->index <= ft_lstsize(*stack_a) / 2)
 		{
 			while (*stack_a != smallest)
-				ra(stack_a, 1);
+				ra(stack_a, true);
 		}
 		else
 		{
 			while (*stack_a != smallest)
-				rra(stack_a, 1);
+				rra(stack_a, true);
 		}
 		pb(stack_a, stack_b);
 	}
 	sort_three(stack_a);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
-	return (0);
 }
