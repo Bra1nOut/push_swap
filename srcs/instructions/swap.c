@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 15:20:33 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/20 17:06:36 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:23:28 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,10 @@ int	swap(t_list **stack)
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
 	first = *stack;
-	ft_printf("First before : %i\n", first->content);
 	second = first->next;
-	ft_printf("Second before : %i\n", second->content);
 	temp = second->content;
 	second->content = first->content;
-	ft_printf("Second after : %i\n", second->content);
 	first->content = temp;
-	ft_printf("First after : %i\n", first->content);
 	return(0);
 }
 
