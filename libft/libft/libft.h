@@ -6,13 +6,14 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 09:34:03 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/05 16:07:09 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/17 11:30:16 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdbool.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <string.h>

@@ -13,6 +13,7 @@ NC = \033[0m
 PURPLE = \033[0;35m
 PINK = \033[38;5;205m
 SRCS =	srcs/parsing/utils.c\
+		srcs/algo/utils_algo.c\
 		srcs/parsing/parsing.c\
 		srcs/parsing/init_list.c\
 		srcs/instructions/swap.c\
@@ -20,6 +21,7 @@ SRCS =	srcs/parsing/utils.c\
 		srcs/instructions/rotate.c\
 		srcs/instructions/rev_rotate.c\
 		srcs/algo/three_n_five.c\
+		srcs/algo/algo_hundred.c\
 		main.c
 
 SRCS_BONUS = \

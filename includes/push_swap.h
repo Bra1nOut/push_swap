@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:31:58 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/05 16:01:32 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/20 16:41:09 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,12 @@ int			ft_isnum(char *str);
 void		ft_free(t_check *argv_test, char **str);
 void		free_lst(t_list **stack);
 bool		stack_sorted(t_list *stack);
+void		current_index(t_list *stack);
+void		set_cheapest(t_list *stack);
 
 //Init List
 void		init_list(int argc, char **argv, t_list **stack);
+void		init_nodes_a(t_list *stack_a, t_list *stack_b);
 
 //Instructions
 int			swap(t_list **stack);

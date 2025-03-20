@@ -6,11 +6,12 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:28:24 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/28 15:07:31 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/17 15:41:34 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
 
 void	ft_error(char *msg)
 {
@@ -70,3 +71,4 @@ void	free_lst(t_list **stack)
 	}
 	free(stack);
 }
+
