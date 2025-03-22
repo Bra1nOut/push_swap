@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:30:16 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/22 16:54:33 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/22 17:33:19 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int	main(int argc, char **argv)
 			else
 				sort_stacks(stack_a, stack_b);
 		}
-		print_stack(*stack_a);
-		print_stack(*stack_b);
+		// print_stack(*stack_a);
+		// print_stack(*stack_b);
 		free(argv_test);
 		free_lst(stack_a);
 		free_lst(stack_b);

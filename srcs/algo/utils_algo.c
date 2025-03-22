@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 15:56:09 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/22 16:55:57 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/22 17:50:20 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ static void	set_target_a(t_list *stack_a, t_list *stack_b)
 	t_list	*target_node;
 	long	best_match_index;
 
-	best_match_index = LONG_MIN;
 	while(stack_a)
 	{
+		best_match_index = LONG_MIN;
 		current_b = stack_b;
 		while (current_b)
 		{
@@ -79,9 +79,10 @@ static void	set_target_b(t_list *stack_a, t_list *stack_b)
 	t_list	*target_node;
 	long	best_match_index;
 
-	best_match_index = LONG_MAX;
 	while(stack_b)
 	{
+		best_match_index = LONG_MAX;
+		target_node = NULL;
 		current_a = stack_a;
 		while (current_a)
 		{
@@ -156,7 +157,7 @@ void	init_nodes_a(t_list *stack_a, t_list *stack_b)
 {
 	current_index(stack_a);
 	current_index(stack_b);
-	set_target_a(stack_a, stack_b);
+	// set_target_a(stack_a, stack_b);
 	push_cost(stack_a, stack_b);
 	set_cheapest(stack_a);
 }
@@ -230,7 +231,9 @@ static void	move_a_to_b(t_list **stack_a, t_list **stack_b)
 	t_list	*cheapest;
 
 	printf("aled2\n");
+	set_target_a(*stack_a, *stack_b);
 	cheapest = get_cheapest(*stack_a);
+	printf("%i\n", cheapest->content);
 	if (!cheapest)
 	{
 		printf("ntm\n");
@@ -251,9 +254,10 @@ static void	move_a_to_b(t_list **stack_a, t_list **stack_b)
 		rev_rotate_both(stack_a, stack_b, cheapest);
 		printf("aled4\n");
 	}
+	printf("connard\n");
 	prep_push(stack_a, cheapest, 'a');
 	prep_push(stack_a, cheapest->target_node, 'b');
-	pb(stack_b, stack_a);
+	pb(stack_a, stack_b);
 }
 
 static void	move_b_to_a(t_list **stack_a, t_list **stack_b)
@@ -267,15 +271,18 @@ void	sort_stacks(t_list **stack_a, t_list **stack_b)
 	int	len_a;
 
 	len_a = ft_lstsize(*stack_a);
+	// printf("ici\n");
 	if (len_a-- > 3 && !stack_sorted(*stack_a))
 	{
-		pb(stack_b, stack_a);
+		pb(stack_a, stack_b);
 	}
+	print_stack(*stack_b);
 	if (len_a-- > 3 && !stack_sorted(*stack_a))
 	{
 
-		pb(stack_b, stack_a);
+		pb(stack_a, stack_b);
 	}
+	print_stack(*stack_b);
 	while (len_a-- > 3 && !stack_sorted(*stack_a))
 	{
 		printf("aled\n");

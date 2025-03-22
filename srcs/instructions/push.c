@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:13:36 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/22 16:16:24 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/22 17:43:14 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ int	pb(t_list **stack_a, t_list **stack_b)
 	t_list	*first;
 	t_list	*current;
 	int		i;
+	int		a;
 
+	a = ft_lstsize(*stack_a);
+	printf("size : %i\n", a);
 	if (ft_lstsize(*stack_a) < 1)
+	{
 		return (-1);
+	}
 	i = 1;
 	first = *stack_a;
 	*stack_a = first->next;
