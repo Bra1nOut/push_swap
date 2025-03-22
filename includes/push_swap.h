@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:31:58 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/20 17:54:37 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/22 16:44:42 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ t_list		*biggest_finder(t_list *stack);
 void		sort_three(t_list **stack_a);
 void		sort_five(t_list **stack_a, t_list **stack_b);
 void		sort_stacks(t_list **stack_a, t_list **stack_b);
+
+
+void print_stack(t_list *stack);
 
 #endif

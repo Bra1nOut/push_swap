@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 15:56:09 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/22 16:18:26 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/22 16:55:57 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,6 +205,7 @@ void	rev_rotate_both(t_list **stack_a, t_list **stack_b, t_list *cheapest)
 
 void	prep_push(t_list **stack, t_list *top_node, char stack_name)
 {
+	printf("aled5\n");
 	while (*stack != top_node)
 	{
 		if (stack_name == 'a')
@@ -228,15 +229,28 @@ static void	move_a_to_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cheapest;
 
+	printf("aled2\n");
 	cheapest = get_cheapest(*stack_a);
-		if (!cheapest)
+	if (!cheapest)
+	{
+		printf("ntm\n");
 		return;
+	}
 	if (!cheapest->target_node)
+	{
+		printf("fdp\n");
 		return;
+	}
 	if (cheapest->above_median && cheapest->target_node->above_median)
+	{
 		rotate_both(stack_a	, stack_b, cheapest);
+		printf("aled3\n");
+	}
 	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
+	{
 		rev_rotate_both(stack_a, stack_b, cheapest);
+		printf("aled4\n");
+	}
 	prep_push(stack_a, cheapest, 'a');
 	prep_push(stack_a, cheapest->target_node, 'b');
 	pb(stack_b, stack_a);
@@ -258,9 +272,13 @@ void	sort_stacks(t_list **stack_a, t_list **stack_b)
 		pb(stack_b, stack_a);
 	}
 	if (len_a-- > 3 && !stack_sorted(*stack_a))
-		pb(stack_a, stack_b);
+	{
+
+		pb(stack_b, stack_a);
+	}
 	while (len_a-- > 3 && !stack_sorted(*stack_a))
 	{
+		printf("aled\n");
 		init_nodes_a(*stack_a, *stack_b);
 		move_a_to_b(stack_a, stack_b);
 	}
