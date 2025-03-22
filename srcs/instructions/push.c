@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:13:36 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/20 18:33:39 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/22 16:16:24 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	pb(t_list **stack_a, t_list **stack_b)
 
 	if (ft_lstsize(*stack_a) < 1)
 		return (-1);
-	printf("stack a size: %d\n", ft_lstsize(*stack_a));
 	i = 1;
 	first = *stack_a;
 	*stack_a = first->next;
@@ -39,8 +38,7 @@ int	pb(t_list **stack_a, t_list **stack_b)
 		current->index = i++;
 		current = current->next;
 	}
-	ft_printf("pb\n");
-	return (0);
+	return (ft_putstr_fd("pb\n", 1), 0);
 }
 
 int	pa(t_list **stack_a, t_list **stack_b)
@@ -69,6 +67,5 @@ int	pa(t_list **stack_a, t_list **stack_b)
 		current->index = i++;
 		current = current->next;
 	}
-	ft_printf("pa\n");
-	return (0);
+	return (ft_putstr_fd("pa\n", 1), 0);
 }

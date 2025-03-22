@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 15:56:09 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/20 18:34:23 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/22 16:18:26 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,11 +253,9 @@ void	sort_stacks(t_list **stack_a, t_list **stack_b)
 	int	len_a;
 
 	len_a = ft_lstsize(*stack_a);
-	printf("LEN_A : %d\n", len_a);
 	if (len_a-- > 3 && !stack_sorted(*stack_a))
 	{
 		pb(stack_b, stack_a);
-		printf("HERE\n");
 	}
 	if (len_a-- > 3 && !stack_sorted(*stack_a))
 		pb(stack_a, stack_b);

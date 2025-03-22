@@ -6,23 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:30:16 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/20 18:19:12 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/22 16:17:37 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-
-void print_stack(t_list *stack)
-{
-	t_list *current = stack;
-	printf("Stack: ");
-	while (current)
-	{
-		printf("%d -> ", current->content);
-		current = current->next;
-	}
-	printf("NULL\n");
-}
 
 int	main(int argc, char **argv)
 {
@@ -50,8 +38,6 @@ int	main(int argc, char **argv)
 				sort_five(stack_a, stack_b);
 			else
 				sort_stacks(stack_a, stack_b);
-			// print_stack(*stack_a);
-			// print_stack(*stack_b);
 		}
 		free(argv_test);
 		free_lst(stack_a);
