@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:27:35 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/28 15:07:47 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:51:43 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	argv_split(t_check *argv_test, int argc, char **argv)
 		i = 1;
 		argv_test->tab = &argv[i];
 	}
+	// printf("%d\n", argv_test->j_split);
 }
 int	argv_check(t_check *argv_test, int argc)
 {

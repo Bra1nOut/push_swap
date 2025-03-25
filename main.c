@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:30:16 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/22 17:33:19 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:53:10 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ int	main(int argc, char **argv)
 	int		i;
 
 	i = 1;
-	if (argc >= 3)
+	if (argc >= 2)
 	{
 		(void) argv;
 		argv_test = malloc(sizeof(t_check));
 		stack_a = malloc(sizeof(t_list));
 		stack_b = malloc(sizeof(t_list));
+		// printf("ntr\n");
 		argv_split(argv_test, argc, argv);
 		argv_check(argv_test, argc);
 		init_list(argc, argv, stack_a);
@@ -51,8 +52,7 @@ int	main(int argc, char **argv)
 			else
 				sort_stacks(stack_a, stack_b);
 		}
-		// print_stack(*stack_a);
-		// print_stack(*stack_b);
+		print_stack(*stack_a);
 		free(argv_test);
 		free_lst(stack_a);
 		free_lst(stack_b);

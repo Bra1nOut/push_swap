@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 15:56:09 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/22 17:50:20 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:17:33 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ static void	push_cost(t_list *stack_a, t_list *stack_b)
 		return ;
 	len_a = ft_lstsize(stack_a);
 	len_b = ft_lstsize(stack_b);
+	// printf("Stack_a->target_node : %d\n", stack_a->target_node->content);
 	while (stack_a)
 	{
 		stack_a->push_cost = stack_a->index;
@@ -147,9 +148,9 @@ static void min_top_check(t_list **stack_a)
 	while ((*stack_a)->content != smallest_finder(*stack_a)->content)
 	{
 		if (smallest_finder(*stack_a)->above_median)
-			ra(stack_a, false);
+			ra(stack_a, true);
 		else
-			rra(stack_a, false);
+			rra(stack_a, true);
 	}
 }
 
@@ -157,8 +158,9 @@ void	init_nodes_a(t_list *stack_a, t_list *stack_b)
 {
 	current_index(stack_a);
 	current_index(stack_b);
-	// set_target_a(stack_a, stack_b);
+	set_target_a(stack_a, stack_b);
 	push_cost(stack_a, stack_b);
+	// printf("aled\n");
 	set_cheapest(stack_a);
 }
 
@@ -206,22 +208,22 @@ void	rev_rotate_both(t_list **stack_a, t_list **stack_b, t_list *cheapest)
 
 void	prep_push(t_list **stack, t_list *top_node, char stack_name)
 {
-	printf("aled5\n");
+	// printf("aled5\n");
 	while (*stack != top_node)
 	{
 		if (stack_name == 'a')
 		{
 			if (top_node->above_median)
-				ra(stack, false);
+				ra(stack, true);
 			else
-				rra(stack, false);
+				rra(stack, true);
 		}
 		else if (stack_name == 'b')
 		{
 			if (top_node->above_median)
-				rb(stack, false);
+				rb(stack, true);
 			else
-				rrb(stack, false);
+				rrb(stack, true);
 		}
 	}
 }
@@ -230,33 +232,31 @@ static void	move_a_to_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cheapest;
 
-	printf("aled2\n");
-	set_target_a(*stack_a, *stack_b);
+	// set_target_a(*stack_a, *stack_b);
 	cheapest = get_cheapest(*stack_a);
-	printf("%i\n", cheapest->content);
+	// printf("%i\n", cheapest->content);
 	if (!cheapest)
 	{
-		printf("ntm\n");
 		return;
 	}
 	if (!cheapest->target_node)
 	{
-		printf("fdp\n");
 		return;
 	}
 	if (cheapest->above_median && cheapest->target_node->above_median)
 	{
 		rotate_both(stack_a	, stack_b, cheapest);
-		printf("aled3\n");
+		// printf("aled3\n");
 	}
 	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
 	{
 		rev_rotate_both(stack_a, stack_b, cheapest);
-		printf("aled4\n");
+		// printf("aled4\n");
 	}
-	printf("connard\n");
+	// printf("connard\n");
 	prep_push(stack_a, cheapest, 'a');
-	prep_push(stack_a, cheapest->target_node, 'b');
+	prep_push(stack_b, cheapest->target_node, 'b');
+	// printf("fdp\n");
 	pb(stack_a, stack_b);
 }
 
@@ -276,17 +276,14 @@ void	sort_stacks(t_list **stack_a, t_list **stack_b)
 	{
 		pb(stack_a, stack_b);
 	}
-	print_stack(*stack_b);
 	if (len_a-- > 3 && !stack_sorted(*stack_a))
 	{
-
 		pb(stack_a, stack_b);
 	}
-	print_stack(*stack_b);
 	while (len_a-- > 3 && !stack_sorted(*stack_a))
 	{
-		printf("aled\n");
 		init_nodes_a(*stack_a, *stack_b);
+		// printf("aled\n");
 		move_a_to_b(stack_a, stack_b);
 	}
 	sort_three(stack_a);

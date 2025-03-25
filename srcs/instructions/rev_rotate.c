@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:15:26 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/20 17:06:36 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:15:24 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	rrr(t_list **stack_a, t_list **stack_b)
 {
 	if (!rra(stack_a, 1) || !rrb(stack_b, 1))
 		return (-1);
-	rra(stack_a, 0);
-	rrb(stack_b, 0);
+	rra(stack_a, false);
+	rrb(stack_b, false);
 	ft_printf("rrr\n");
 	return (0);
 }
