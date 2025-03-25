@@ -21,7 +21,8 @@ SRCS =	srcs/parsing/utils.c\
 		srcs/instructions/rotate.c\
 		srcs/instructions/rev_rotate.c\
 		srcs/algo/three_n_five.c\
-		srcs/algo/algo_hundred.c\
+		srcs/algo/init_nodes.c\
+		srcs/algo/sort.c\
 		main.c
 
 SRCS_BONUS = \

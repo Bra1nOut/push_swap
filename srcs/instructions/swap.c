@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 15:20:33 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/25 15:15:42 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:02:03 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	swap(t_list **stack)
 	temp = second->content;
 	second->content = first->content;
 	first->content = temp;
-	return(0);
+	return (0);
 }
 
 int	sa(t_list **stack_a, bool check)

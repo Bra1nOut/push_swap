@@ -6,12 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:28:24 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/17 15:41:34 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:01:33 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
 
 void	ft_error(char *msg)
 {
@@ -60,9 +59,10 @@ void	ft_free(t_check *argv_test, char **str)
 
 void	free_lst(t_list **stack)
 {
-	t_list *next;
+	t_list	*next;
+
 	if (!stack)
-		return;
+		return ;
 	while (*stack)
 	{
 		next = (*stack)->next;
@@ -71,4 +71,3 @@ void	free_lst(t_list **stack)
 	}
 	free(stack);
 }
-

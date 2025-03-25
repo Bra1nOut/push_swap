@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:25:27 by levincen          #+#    #+#             */
-/*   Updated: 2025/02/25 16:17:12 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:09:43 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,13 @@ int	ft_atoi(const char *str)
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-		{
-			if (signe >= 1)
-				return (0);
-			signe *= -1;
-			signe++;
-			i++;
-		}
+			signe = -1;
+		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	result = result * signe;
-	return (result);
+	return (result * signe);
 }

@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:15:26 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/25 15:15:24 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:02:21 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	rev_rotate(t_list	**stack)
 	i = 0;
 	last = *stack;
 	almost_last = NULL;
-	while(last->next)
+	while (last->next)
 	{
 		almost_last = last;
 		last = last->next;
@@ -64,4 +64,12 @@ int	rrr(t_list **stack_a, t_list **stack_b)
 	rrb(stack_b, false);
 	ft_printf("rrr\n");
 	return (0);
+}
+
+void	rev_rotate_both(t_list **stack_a, t_list **stack_b, t_list *cheapest)
+{
+	while (*stack_b != cheapest->target_node && *stack_a != cheapest)
+		rrr(stack_a, stack_b);
+	current_index(*stack_a);
+	current_index(*stack_b);
 }

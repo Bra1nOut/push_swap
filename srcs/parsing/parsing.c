@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:27:35 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/25 15:51:43 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:00:49 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ long int	ft_atoi_swap(const char *str)
 
 int	ft_duplicate_number(char *num_str, char **argv, int i)
 {
-	int num1;
-	int num2;
+	int	num1;
+	int	num2;
 
 	num1 = ft_atoi_swap(num_str);
 	i++;
@@ -86,8 +86,8 @@ void	argv_split(t_check *argv_test, int argc, char **argv)
 		i = 1;
 		argv_test->tab = &argv[i];
 	}
-	// printf("%d\n", argv_test->j_split);
 }
+
 int	argv_check(t_check *argv_test, int argc)
 {
 	int		i;

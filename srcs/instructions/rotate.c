@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:55:42 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/25 15:15:33 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:51:59 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,12 @@ int	rr(t_list **stack_a, t_list **stack_b)
 	rb(stack_b, false);
 	ft_printf("rr\n");
 	return (0);
+}
+
+void	rotate_both(t_list **stack_a, t_list **stack_b, t_list *cheapest)
+{
+	while (*stack_b != cheapest->target_node && *stack_a != cheapest)
+		rr(stack_a, stack_b);
+	current_index(*stack_a);
+	current_index(*stack_b);
 }

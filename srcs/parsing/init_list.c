@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:54:57 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/20 18:17:15 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:59:57 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,50 @@
 
 void	init_non_splitted_list(char **argv, t_list **stack)
 {
-	t_list *new;
-	int	i;
-	int	j;
-	int	index;
+	t_list	*new;
+	int		i;
+	int		j;
+	int		index;
 
 	i = 1;
 	j = 0;
 	index = 1;
 	*stack = NULL;
 	while (argv[i])
-		{
-			new = ft_lstnew((int)(long)ft_atoi_swap(argv[i]));
-			new->index = index;
-			ft_lstadd_back(stack, new);
-			i++;
-			index++;
-		}
+	{
+		new = ft_lstnew((int)(long)ft_atoi_swap(argv[i]));
+		new->index = index;
+		ft_lstadd_back(stack, new);
+		i++;
+		index++;
+	}
 }
 
 void	init_splitted_list(char **splitted_list, t_list **stack)
 {
-		t_list *new;
-		int	i;
-		int	j;
-		int	index;
+	t_list	*new;
+	int		i;
+	int		j;
+	int		index;
 
-		i = 0;
-		j = 0;
-		index = 1;
-		*stack = NULL;
-		while (splitted_list[i])
-		{
-			new = ft_lstnew((int)(long)ft_atoi_swap(splitted_list[i]));
-			new->index = index;
-			ft_lstadd_back(stack, new);
-			i++;
-			index++;
-		}
+	i = 0;
+	j = 0;
+	index = 1;
+	*stack = NULL;
+	while (splitted_list[i])
+	{
+		new = ft_lstnew((int)(long)ft_atoi_swap(splitted_list[i]));
+		new->index = index;
+		ft_lstadd_back(stack, new);
+		i++;
+		index++;
+	}
 }
 
-void	init_list(int argc, char **argv ,t_list **stack)
+void	init_list(int argc, char **argv, t_list **stack)
 {
 	char	**splitted_list;
-	int	j;
+	int		j;
 
 	j = 0;
 	*stack = NULL;
@@ -68,7 +68,7 @@ void	init_list(int argc, char **argv ,t_list **stack)
 	{
 		splitted_list = ft_split(argv[1], ' ');
 		init_splitted_list(splitted_list, stack);
-		while(splitted_list[j])
+		while (splitted_list[j])
 			free(splitted_list[j++]);
 		free(splitted_list);
 	}

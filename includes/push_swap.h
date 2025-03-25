@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:31:58 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/22 16:44:42 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:07:20 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void		free_lst(t_list **stack);
 bool		stack_sorted(t_list *stack);
 void		current_index(t_list *stack);
 void		set_cheapest(t_list *stack);
+t_list		*get_cheapest(t_list *stack);
 
 //Init List
 void		init_list(int argc, char **argv, t_list **stack);
@@ -63,6 +64,9 @@ int			rev_rotate(t_list	**stack);
 int			rra(t_list **stack_a, bool check);
 int			rrb(t_list **stack_b, bool check);
 int			rrr(t_list **stack_a, t_list **stack_b);
+void		rotate_both(t_list **stack_a, t_list **stack_b, t_list *cheapest);
+void		rev_rotate_both(t_list **stack_a, t_list **stack_b,
+				t_list *cheapest);
 
 //Sort
 t_list		*smallest_finder(t_list *stack);
@@ -70,8 +74,5 @@ t_list		*biggest_finder(t_list *stack);
 void		sort_three(t_list **stack_a);
 void		sort_five(t_list **stack_a, t_list **stack_b);
 void		sort_stacks(t_list **stack_a, t_list **stack_b);
-
-
-void print_stack(t_list *stack);
 
 #endif
