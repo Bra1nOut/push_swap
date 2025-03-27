@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:31:58 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/25 17:07:20 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:25:26 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,18 @@ typedef struct s_check
 {
 	char	**tab;
 	int		j_split;
+	bool	split;
 }				t_check;
 
 //Parsing
-int			atoi_limits(long int result, int sign);
+long int	atoi_limits(long int result, int sign);
 long int	ft_atoi_swap(const char *str);
 int			ft_duplicate_number(char *num_str, char **argv, int i);
 void		argv_split(t_check *argv_test, int argc, char **argv);
 int			argv_check(t_check *argv_test, int argc);
 
 //Utils
-void		ft_error(char *msg);
+void		ft_error(char *msg, t_check *argv_test, t_list **stack_a);
 int			ft_strcmp_swap(char *s1, char *s2);
 int			ft_isnum(char *str);
 void		ft_free(t_check *argv_test, char **str);
@@ -45,7 +46,7 @@ void		set_cheapest(t_list *stack);
 t_list		*get_cheapest(t_list *stack);
 
 //Init List
-void		init_list(int argc, char **argv, t_list **stack);
+t_list		**init_list(int argc, char **argv, t_check *argv_test);
 void		init_nodes_a(t_list *stack_a, t_list *stack_b);
 void		init_nodes_b(t_list *stack_a, t_list *stack_b);
 

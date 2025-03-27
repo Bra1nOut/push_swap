@@ -6,16 +6,16 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:27:35 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/25 17:00:49 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:53:23 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	atoi_limits(long int result, int sign)
+long int	atoi_limits(long int result, int sign)
 {
 	if ((result * sign) > INT_MAX || (result * sign) < INT_MIN)
-		ft_error("INT RANGE ERROR");
+		return (ERROR);
 	return (1);
 }
 
@@ -42,7 +42,9 @@ long int	ft_atoi_swap(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		atoi_limits(result = result * 10 + (str[i] - '0'), sign);
+		result = result * 10 + (str[i] - '0');
+		if (atoi_limits(result, sign) == ERROR)
+			return (ERROR);
 		i++;
 	}
 	return (result * sign);
@@ -70,15 +72,16 @@ void	argv_split(t_check *argv_test, int argc, char **argv)
 	int		i;
 
 	argv_test->tab = NULL;
+	argv_test->split = false;
 	i = 0;
 	argv_test->j_split = 1;
 	if (argc == 2)
 	{
+		argv_test->split = true;
 		argv_test->tab = ft_split(argv[1], ' ');
+		//ft_split(argv[1], " 	");
 		while (argv_test->tab[argv_test->j_split])
 			argv_test->j_split++;
-		ft_free(argv_test, argv_test->tab);
-		free(argv_test->tab);
 	}
 	else
 	{
@@ -103,9 +106,9 @@ int	argv_check(t_check *argv_test, int argc)
 			{
 				temp = ft_atoi_swap(argv_test->tab[i]);
 				if (!ft_isnum(argv_test->tab[i]))
-					ft_error("NUM ERROR");
+					ft_error("NUM ERROR", argv_test, NULL);
 				if (ft_duplicate_number(argv_test->tab[i], argv_test->tab, i))
-					ft_error("DUPLICATE ERROR");
+					ft_error("DUPLICATE ERROR", argv_test, NULL);
 				i++;
 			}
 		}

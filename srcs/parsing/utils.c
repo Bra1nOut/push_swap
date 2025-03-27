@@ -6,15 +6,25 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:28:24 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/25 17:01:33 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:55:14 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_error(char *msg)
+void	ft_error(char *msg, t_check *argv_test, t_list **stack_a)
 {
 	ft_putendl_fd(msg, 1);
+	if (argv_test->split == true)
+	{
+		ft_free(argv_test, argv_test->tab);
+		free(argv_test->tab);
+	}
+	if (stack_a)
+	{
+		free(stack_a);
+	}
+	free(argv_test);
 	exit(0);
 }
 

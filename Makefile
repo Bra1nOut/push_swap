@@ -1,7 +1,7 @@
 NAME = push_swap
 NAME_BONUS = push_swap_bonus
 CC = cc
-FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address
 RM = rm -rf
 LIBFT = libft/libft.a
 LIBFT_FLAGS = -L./libft -lft

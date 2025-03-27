@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 09:34:03 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/25 17:10:19 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:43:13 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_putnbr_fd(int n, int fd);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+void	free_tab(char **tab);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_strlen(const char *str);

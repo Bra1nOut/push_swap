@@ -14,6 +14,7 @@ SRCS =	libft/ft_isalpha.c\
 		libft/ft_putstr_fd.c\
 		libft/ft_strncmp.c\
 		libft/ft_substr.c\
+		libft/ft_free_tab.c\
 		libft/ft_split.c\
 		gnl/get_next_line.c\
 		gnl/get_next_line_utils.c\
