@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:30:16 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/28 15:09:30 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/28 16:08:19 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	init_all(t_check *argv_test, int argc, char **argv)
 void	algo_start(t_list **stack_a, t_list **stack_b, int argc)
 {
 	if (!stack_sorted(*stack_a))
-		{
-			if (argc == 4)
-				sort_three(stack_a);
-			else if (argc == 6)
-				sort_five(stack_a, stack_b);
-			else
-				sort_stacks(stack_a, stack_b);
-		}
+	{
+		if (argc == 4)
+			sort_three(stack_a);
+		else if (argc == 6)
+			sort_five(stack_a, stack_b);
+		else
+			sort_stacks(stack_a, stack_b);
+	}
 }
 
 void	free_all(t_check *argv_test, t_list **stack_a, t_list **stack_b)
