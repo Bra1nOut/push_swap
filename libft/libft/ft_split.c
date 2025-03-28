@@ -6,35 +6,44 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:23:10 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/27 16:54:09 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/28 16:00:24 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-static int	ft_count_words(const char *str, char c)
+static int	is_sep(char ch, char *c)
+{
+	while (*c)
+	{
+		if (ch == *c)
+			return (1);
+		c++;
+	}
+	return (0);
+}
+
+static int	ft_count_words(const char *s, char c)
 {
 	int	count;
 	int	i;
 
 	count = 0;
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
-		while (str[i] == c)
+		while (s[i] && (s[i] == c || s[i] == ' ' || s[i] == '\t'))
 			i++;
-		if (str[i] != '\0')
-		{
+		if (s[i])
 			count++;
-			while (str[i] && str[i] != c)
-				i++;
-		}
+		while (s[i] && !(s[i] == c || s[i] == ' ' || s[i] == '\t'))
+			i++;
 	}
 	return (count);
 }
 
-static char	**ft_fill(char **new, const char *s, char c)
+static char	**ft_fill(char **new, const char *s, char *c)
 {
 	size_t	i;
 	size_t	copy;
@@ -45,10 +54,10 @@ static char	**ft_fill(char **new, const char *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		while (s[i] == c && s[i])
+		while (s[i] && is_sep(s[i], c))
 			i++;
 		copy = i;
-		while (s[i] != c && s[i])
+		while (s[i] && !is_sep(s[i], c))
 			i++;
 		str = ft_substr(s, copy, i - copy);
 		new[count] = str;
@@ -59,14 +68,14 @@ static char	**ft_fill(char **new, const char *s, char c)
 	return (new);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char *c)
 {
 	char	**new;
 	int		count;
 
-	if (!s)
+	if (!s || !c)
 		return (NULL);
-	count = ft_count_words(s, c);
+	count = ft_count_words(s, *c);
 	new = malloc((count + 1) * sizeof(char *));
 	if (!new)
 		return (NULL);

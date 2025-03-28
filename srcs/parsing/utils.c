@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:28:24 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/27 16:55:14 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/27 17:02:59 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	ft_error(char *msg, t_check *argv_test, t_list **stack_a)
 		free(argv_test->tab);
 	}
 	if (stack_a)
-	{
 		free(stack_a);
-	}
 	free(argv_test);
 	exit(0);
 }

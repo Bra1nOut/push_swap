@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:30:16 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/27 16:04:49 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/28 15:09:30 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,13 @@ int	main(int argc, char **argv)
 		(void) argv;
 		argv_test = malloc(sizeof(t_check));
 		init_all(argv_test, argc, argv);
+		if (argv_test->j_split == 1)
+		{
+			if (!ft_isnum(argv[1]))
+				ft_error("NUM ERROR", argv_test, NULL);
+		}
 		stack_a = init_list(argc, argv, argv_test);
-		stack_b = malloc(sizeof(t_list));
-		*stack_b = NULL;
+		stack_b = ft_calloc(sizeof(t_list), 1);
 		algo_start(stack_a, stack_b, argc);
 		free_all(argv_test, stack_a, stack_b);
 	}

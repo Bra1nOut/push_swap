@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:27:35 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/27 16:53:23 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/28 16:01:34 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,31 @@ long int	atoi_limits(long int result, int sign)
 	return (1);
 }
 
-long int	ft_atoi_swap(const char *str)
+long	ft_atoi_swap(const char *str)
 {
-	long int	result;
-	int			sign;
-	int			i;
+	long	result;
+	int		sign;
+	int		i;
 
 	if (!str)
 		return (ft_putstr_fd("Error\n", 1), ERROR);
 	i = 0;
 	sign = 1;
 	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			sign = -1;
-		if (!str[i + 1] || !ft_isdigit(str[i + 1]))
+		if (!str[i] || !ft_isdigit(str[i]))
 			return (ERROR);
-		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = result * 10 + (str[i] - '0');
+		result = result * 10 + (str[i++] - '0');
 		if (atoi_limits(result, sign) == ERROR)
 			return (ERROR);
-		i++;
 	}
 	return (result * sign);
 }
@@ -78,8 +76,7 @@ void	argv_split(t_check *argv_test, int argc, char **argv)
 	if (argc == 2)
 	{
 		argv_test->split = true;
-		argv_test->tab = ft_split(argv[1], ' ');
-		//ft_split(argv[1], " 	");
+		argv_test->tab = ft_split(argv[1], " 	");
 		while (argv_test->tab[argv_test->j_split])
 			argv_test->j_split++;
 	}

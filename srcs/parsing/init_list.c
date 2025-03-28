@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:54:57 by levincen          #+#    #+#             */
-/*   Updated: 2025/03/27 16:44:25 by levincen         ###   ########.fr       */
+/*   Updated: 2025/03/28 15:27:50 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	init_non_splitted_list(char **argv, t_list **stack, t_check *argv_test)
 {
-	t_list	*new;
-	int		i;
-	int		j;
-	int		index;
+	t_list		*new;
+	int			i;
+	int			j;
+	int			index;
 	long int	result;
 
 	i = 1;
@@ -37,12 +37,13 @@ void	init_non_splitted_list(char **argv, t_list **stack, t_check *argv_test)
 	}
 }
 
-void	init_splitted_list(char **splitted_list, t_list **stack, t_check *argv_test)
+void	init_splitted_list(char **splitted_list,
+	t_list **stack, t_check *argv_test)
 {
-	t_list	*new;
-	int		i;
-	int		j;
-	int		index;
+	t_list		*new;
+	int			i;
+	int			j;
+	int			index;
 	long int	result;
 
 	i = 0;
@@ -72,14 +73,13 @@ t_list	**init_list(int argc, char **argv, t_check *argv_test)
 	int		j;
 
 	j = 0;
-	stack_a = malloc(sizeof(t_list));
-	*stack_a = NULL;
+	stack_a = ft_calloc(sizeof(t_list), 1);
 	splitted_list = NULL;
 	if (argc > 2)
 		init_non_splitted_list(argv, stack_a, argv_test);
 	else if (argc == 2)
 	{
-		splitted_list = ft_split(argv[1], ' ');
+		splitted_list = ft_split(argv[1], " 	");
 		init_splitted_list(splitted_list, stack_a, argv_test);
 		free_tab(splitted_list);
 	}
